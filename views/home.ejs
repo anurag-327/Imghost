@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/output.css">
+    <title>Document</title>
+</head>
+<body class="" >
+    <form class=" flex flex-col border border-gray-500 shadow-sm  px-5 py-10 w-[60%] sm:w-[95%] md:w-[80%] mx-auto rounded-md mt-10 justify-center items-center " method="POST" action="/upload" enctype="multipart/form-data">
+        <!-- <div>
+            <input type="file" name="Image" required/>
+        </div> -->
+        <div class="mb-3 w">
+            <label
+              for="formFile"
+              class="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
+              >Uplaod Image</label
+            >
+            <input
+              class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100"
+              type="file"
+              id="formFile"
+              name="Image"
+              required />
+          </div>
+        <div class=" bg-blue-600 px-4 py-2 text-white rounded-md">
+            <input type="submit" class="cursor-pointer " value="Upload" />
+        </div>
+    </form>
+    <main class="flex gap-6 mt-10 justify-center items-center flex-wrap p-5">
+        <% for(let i of url) { %>
+            <div class="p-2 rounded-xl shadow-2xl ">
+                <img class="w-[300px] aspect-square object-contain" src="<%= i.url %>" alt="image" />
+                <button id="copyurl" value="<%= i.url %>" class="mx-auto mt-3 px-4 py-2 bg-blue-600 text-white rounded-md">Copy URL</button>
+            </div>
+        <% } %>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+</html>
